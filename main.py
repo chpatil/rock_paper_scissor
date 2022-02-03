@@ -28,37 +28,46 @@ scissors = '''
 '''
 
 #Write your code below this line 👇
-user_choice=int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."))
-if(user_choice==0):
-  print(rock)
-elif(user_choice==1):
-  print(paper)
-else:
-  print(scissors)
+cmp =0
+runn=0
+user_points=0
+while(runn!=5):
+  user_choice=int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."))
+  if(user_choice==0):
+    print(rock)
+  elif(user_choice==1):
+    print(paper)
+  else:
+    print(scissors)
 
-print("Computer chose:")
-comp_choice=random.randint(0,2)
-if(comp_choice==0):
-  print(rock)
-elif(comp_choice==1):
-  print(paper)
+  print("Computer chose:")
+  comp_choice=random.randint(0,2)
+  if(comp_choice==0):
+    print(rock)
+  elif(comp_choice==1):
+    print(paper)
+  else:
+    print(scissors)
+  if(user_choice==0 and comp_choice==1):
+    cmp+=1
+  elif(user_choice==0 and comp_choice==2):
+    user_points+=1
+  elif(user_choice==0 and comp_choice==0):
+    print("Draw")
+  elif(user_choice==1 and comp_choice==0):
+    user_points+=1
+  elif(user_choice==1 and comp_choice==1):
+    print("Draw")
+  elif(user_choice==1 and comp_choice==2):
+    cmp+=1
+  elif(user_choice==2 and comp_choice==0):
+    cmp+=1
+  elif(user_choice==2 and comp_choice==1):
+    user_points+=1
+  elif(user_choice==2 and comp_choice==2):
+    print("Draw")
+  runn+=1
+if(cmp>user_points):
+  print(f"computer got {cmp} you lose")
 else:
-  print(scissors)
-if(user_choice==0 and comp_choice==1):
-  print("You lose")
-elif(user_choice==0 and comp_choice==2):
-  print("You win")
-elif(user_choice==0 and comp_choice==0):
-  print("Draw")
-elif(user_choice==1 and comp_choice==0):
-  print("You win")
-elif(user_choice==1 and comp_choice==1):
-  print("Draw")
-elif(user_choice==1 and comp_choice==2):
-  print("You lose")
-elif(user_choice==2 and comp_choice==0):
-  print("You lose")
-elif(user_choice==2 and comp_choice==1):
-  print("You win")
-elif(user_choice==2 and comp_choice==2):
-  print("Draw")
+  print(f"user got {user_points} you win")
