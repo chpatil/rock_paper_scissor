@@ -1,3 +1,5 @@
+import random
+random.seed(random.randint(258,845791))
 rock = '''
     _______
 ---'   ____)
@@ -26,4 +28,37 @@ scissors = '''
 '''
 
 #Write your code below this line 👇
+user_choice=int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."))
+if(user_choice==0):
+  print(rock)
+elif(user_choice==1):
+  print(paper)
+else:
+  print(scissors)
 
+print("Computer chose:")
+comp_choice=random.randint(0,2)
+if(comp_choice==0):
+  print(rock)
+elif(comp_choice==1):
+  print(paper)
+else:
+  print(scissors)
+if(user_choice==0 and comp_choice==1):
+  print("You lose")
+elif(user_choice==0 and comp_choice==2):
+  print("You win")
+elif(user_choice==0 and comp_choice==0):
+  print("Draw")
+elif(user_choice==1 and comp_choice==0):
+  print("You win")
+elif(user_choice==1 and comp_choice==1):
+  print("Draw")
+elif(user_choice==1 and comp_choice==2):
+  print("You lose")
+elif(user_choice==2 and comp_choice==0):
+  print("You lose")
+elif(user_choice==2 and comp_choice==1):
+  print("You win")
+elif(user_choice==2 and comp_choice==2):
+  print("Draw")
